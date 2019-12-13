@@ -23,20 +23,11 @@ function mason_compile {
     # patch CMakeLists file
     cat ../CMakeLists.txt | sed -e '/find_package.Sqlite3/ s/^/#/' > ../CMakeLists.txt.new && cp ../CMakeLists.txt.new ../CMakeLists.txt
 
-    if [ ${MASON_PLATFORM} = 'android' ]; then
-        ${MASON_DIR}/utils/android.sh > toolchain.cmake
-
-        cmake \
-            -DCMAKE_BUILD_TYPE=Release \
-            -DCMAKE_INSTALL_PREFIX=${MASON_PREFIX} \
-            -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake \
-            ..
-    else
-        cmake \
-            -DCMAKE_BUILD_TYPE=RELEASE \
-            -DCMAKE_INSTALL_PREFIX=${MASON_PREFIX} \
-            ..
-    fi
+    cmake \
+        -DCMAKE_BUILD_TYPE=RELEASE \
+        -DCMAKE_INSTALL_PREFIX=${MASON_PREFIX} \
+        ${MASON_CMAKE_TOOLCHAIN} \
+        ..
 
     make install -j${MASON_CONCURRENCY}
 }

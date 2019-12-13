@@ -88,6 +88,7 @@ function mason_compile {
         -no-whirlpool \
         -fPIC \
         -DOPENSSL_PIC \
+        -DOPENSSL_NO_DEPRECATED \
         -DOPENSSL_NO_COMP \
         -DOPENSSL_NO_HEARTBEATS \
         --openssldir=${MASON_PREFIX}/etc/openssl \

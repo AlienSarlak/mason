@@ -1,1 +1,3 @@
-For context on this file see https://github.com/mapbox/mason/blob/master/scripts/llvm/base/README.md
+### llvm v4.x
+
+Development package of llvm git head

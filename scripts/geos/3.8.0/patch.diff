@@ -1,0 +1,11 @@
+--- a/tools/geos-config.in	2019-10-08 09:20:35.000000000 -0700
++++ b/tools/geos-config.in	2019-12-12 06:32:53.779839269 -0800
+@@ -58,7 +58,7 @@
+       echo -L@libdir@ -lgeos -lm
+       ;;
+     --ldflags)
+-      echo -L@libdir@
++      echo -L@libdir@ -lgeos
+       ;;
+     --includes)
+       echo @prefix@/include

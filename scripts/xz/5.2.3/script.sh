@@ -8,7 +8,7 @@ MASON_LIB_FILE=lib/liblzma.a
 
 function mason_load_source {
     mason_download \
-        https://tukaani.org/xz/xz-${MASON_VERSION}.tar.gz \
+        http://tukaani.org/xz/xz-${MASON_VERSION}.tar.gz \
         147ce202755a3d846dc17479999671c7cadf0c2f
 
     mason_extract_tar_gz
